@@ -10,6 +10,7 @@ import Reservations from "./pages/Reservations";
 import Profile from "./pages/Profile";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
+import "./App.css";
 
 function App() {
   return (
