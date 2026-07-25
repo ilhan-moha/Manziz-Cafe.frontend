@@ -1,16 +1,14 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../components/layout/Navbar";
+import Hero from "../components/home/Hero";
 
 function Home() {
   return (
     <>
         <Navbar />
-        <main className="home">
-              <h1>Welcome to Manziz Cafe</h1>
-              <p>Fresh coffee,delicious meals,and easy reservations!</p>
-              <button>Reserve a Table</button>
-        </main>
+        <Hero />
     </>
   );
 }
 
 export default Home;
+    
