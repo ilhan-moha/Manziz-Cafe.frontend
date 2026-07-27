@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
+import heroImage from "../../assets/images/photo-1467003909585-2f8a72700288.avif";
+
 
 function Hero() {
   return (
-    <section className="hero">
+    <section className="hero"
+      style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="hero-overlay">
             <span className="location-badge">
               📍 Now Open • Westlands, Nairobi  
@@ -20,13 +24,13 @@ function Hero() {
           </p>
         
         <div className="hero-buttons">
-            <button className="primary-btn">
+            <Link className="primary-btn" to="/reservations">
                 Reserve a Table
-            </button>
+            </Link>
 
-            <button className="secondary-btn">
+            <Link className="secondary-btn" to="/menu">
                 View Our Menu
-            </button>
+            </Link>
         </div>
         </div>
     </section>

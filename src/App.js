@@ -14,6 +14,7 @@ import "./styles/global.css";
 import "./styles/navbar.css";
 import "./styles/hero.css";
 import "./styles/variables.css";
+import "./styles/home.css";
 
 function App() {
   return (
