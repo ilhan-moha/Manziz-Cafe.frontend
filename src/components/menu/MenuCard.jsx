@@ -1,3 +1,6 @@
+import "../../styles/MenuCard.css";
+
+
 function MenuCard({ image, name, description, price}) {
     return (
         <div className="menu-card">
@@ -8,7 +11,7 @@ function MenuCard({ image, name, description, price}) {
 
                 <div className="menu-footer">
                     <span className="price">Ksh{price}</span>
-                    <button>Add to Cart</button>
+                    <button className="cart-btn">Add to Cart</button>
                 </div>
             </div>
            
