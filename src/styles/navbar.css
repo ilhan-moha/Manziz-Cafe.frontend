@@ -54,3 +54,21 @@
     color: white;
 
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 5%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .auth-buttons {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}

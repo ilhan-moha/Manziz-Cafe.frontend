@@ -15,6 +15,7 @@ import "./styles/navbar.css";
 import "./styles/hero.css";
 import "./styles/variables.css";
 import "./styles/home.css";
+import "./styles/footer.css"
 
 function App() {
   return (

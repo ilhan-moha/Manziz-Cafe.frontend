@@ -116,7 +116,6 @@
 }
 
 .testimonial-grid {
-  margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -145,4 +144,28 @@
 .testimonial-card h4 {
   margin-top: 20px;
   color: var(--primary);
+}
+
+@media (max-width: 992px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 992px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
 }
