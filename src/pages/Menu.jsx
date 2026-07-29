@@ -1,4 +1,6 @@
 import { useState } from "react"
+import Navbar from "../components/layout/Navbar"
+import Footer from "../components/layout/Footer"
 
 import MenuCard from "../components/menu/MenuCard"
 
@@ -72,6 +74,10 @@ const filteredItems = menuItems.filter((item) => {
 
 
  return (
+    <>
+
+    <Navbar/>
+       
         <section className="menu-page">
 
           <div className="menu-header">
@@ -134,6 +140,9 @@ const filteredItems = menuItems.filter((item) => {
 
        </div>
  </section>
+
+ <Footer/>
+</>
  );
 
 }

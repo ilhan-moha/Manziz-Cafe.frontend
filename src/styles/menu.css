@@ -2,26 +2,22 @@
   padding: 5px 5%;
   background: #faf8f5;
   min-height: 100vh;
+
 }
 
 .menu-header {
-  text-align: start;
+  text-align: center;
   margin-bottom: 50px;
 }
 
 .menu-header h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   color: var(--primary);
   margin-bottom: 15px;
   font-family: "Poppins", sans-serif;
 }
 
-.menu-header p {
-  max-width: 650px;
-  color: #555;
-  line-height: 1.7;
-  font-size: 1.1rem;
-}
+
 
 
 .menu-search {
@@ -100,7 +96,7 @@
   }
 
   .menu-header h1 {
-    font-size: 2.3rem;
+    font-size: 1.5rem;
   }
 
   .menu-header p {

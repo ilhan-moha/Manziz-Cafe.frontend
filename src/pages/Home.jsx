@@ -10,9 +10,13 @@ function Home() {
         <Navbar />
         <Hero />
         <FeaturedMenu />
-        <Testimonials />
-        <Footer />
-    </>
+        <section id="about">
+          <Testimonials />
+        </section>
+        <section id="contact">
+          <Footer />
+        </section>
+     </>
   );
 }
 
