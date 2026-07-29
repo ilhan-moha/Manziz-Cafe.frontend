@@ -93,8 +93,8 @@ const filteredItems = menuItems.filter((item) => {
 
           <div className="menu-categories">
             <button 
-             className={category === "ALL" ? "active" : ""}
-             onClick={() => setCategory("ALL")}>
+             className={category === "All" ? "active" : ""}
+             onClick={() => setCategory("All")}>
             All</button>
             <button
               className={category === "Coffee" ? "active" : ""}
