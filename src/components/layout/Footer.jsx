@@ -28,7 +28,7 @@ function Footer() {
                 <li><Link to="/menu">Our Menu</Link></li>
                 <li><Link to= "/about">About Us</Link></li>
                 <li><Link to="/reservations">Reservations</Link></li>
-                <li><Link to="/Contct">contact</Link></li>
+                <li><Link to="/Contact">contact</Link></li>
             </ul>
         </div>
 

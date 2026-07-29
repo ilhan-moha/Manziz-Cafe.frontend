@@ -1,7 +1,6 @@
-import { FaPlus, FaEdit, FaTrash } from "react-icons/fa";
-import "../styles/orders.css";
+import "../../styles/recentOrders.css";
 
-function Orders() {
+function RecentOrders() {
   const orders = [
     {
       id: "#1001",
@@ -27,18 +26,10 @@ function Orders() {
   ];
 
   return (
-    <section className="orders-page">
+    <section className="recent-orders">
+      <h2>Recent Orders</h2>
 
-      <div className="orders-header">
-        <h1>Orders</h1>
-
-        <button className="add-order-btn">
-          <FaPlus /> Add Order
-        </button>
-      </div>
-
-      <table className="orders-table">
-
+      <table>
         <thead>
           <tr>
             <th>Order ID</th>
@@ -46,7 +37,6 @@ function Orders() {
             <th>Item</th>
             <th>Total</th>
             <th>Status</th>
-            <th>Actions</th>
           </tr>
         </thead>
 
@@ -57,31 +47,17 @@ function Orders() {
               <td>{order.customer}</td>
               <td>{order.item}</td>
               <td>{order.total}</td>
-
               <td>
                 <span className={`status ${order.status.toLowerCase()}`}>
                   {order.status}
                 </span>
               </td>
-
-              <td className="actions">
-                <button className="edit-btn">
-                  <FaEdit />
-                </button>
-
-                <button className="delete-btn">
-                  <FaTrash />
-                </button>
-              </td>
-
             </tr>
           ))}
         </tbody>
-
       </table>
-
     </section>
   );
 }
 
-export default Orders;
+export default RecentOrders;
