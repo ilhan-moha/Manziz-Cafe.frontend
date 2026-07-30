@@ -19,7 +19,7 @@ function Menu() {
 
   return(
     <>
-    <navbar />
+    <Navbar />
 
     <section className="menu-page">
       <div className="menu-header">
