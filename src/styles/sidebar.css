@@ -58,7 +58,8 @@
 }
 
 .logout-btn:hover {
-  background: var(--accent);
+  background: #D2B48C;
+  color: #8B4513;
 }
 
 @media (max-width: 768px) {

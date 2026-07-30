@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   FaHome,
   FaUtensils,
@@ -10,7 +10,15 @@ import {
 
 import "../../styles/sidebar.css";
 
-function Sidebar() {
+
+  function Sidebar() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+
   return (
     <aside className="sidebar">
 
@@ -42,7 +50,7 @@ function Sidebar() {
 
       </nav>
 
-      <button className="logout-btn">
+      <button className="logout-btn" onClick={handleLogout}>
         <FaSignOutAlt /> Logout
       </button>
 
