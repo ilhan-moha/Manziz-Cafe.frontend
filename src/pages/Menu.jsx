@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react"
+import { Link, useEffect, useState } from "react"
 import axios from "axios"
-import Navbar from "../components/layout/Navbar"
 import Footer from "../components/layout/Footer"
 import MenuCard from "../components/menu/MenuCard"
 import "../styles/menu.css";
+import { useCart } from "../context/CartContext";
+import { FaShoppingCart, FaArrowLeft } from "react-icons/fa";
 import API_URL from "../services/api";
 
 function Menu() {
-
+  const {cart} =useCart();
   const [menuItems, setmenuItems] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
   
@@ -38,13 +39,23 @@ const filteredItems =
 
   return(
     <>
-    <Navbar />
+    
 
     <section className="menu-page">
       <div className="menu-header">
         <h1>Menu</h1>
         <p>Discover our freshly prepared coffee, pastries, desserts, and meals.</p>
       </div>
+        <div className="menu-top">
+      <Link to="/" className="back-home-btn">
+        <FaArrowLeft /> Back to Home
+      </Link>
+
+      <Link to="/cart" className="cart-top-btn">
+        <FaShoppingCart />
+        Cart ({cart.length})
+      </Link>
+    </div>
 
       <div className="menu-categories">
           {categories.map((category) => (

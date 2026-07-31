@@ -1,5 +1,6 @@
 import { useCart } from "../context/CartContext";
-import Navbar from "../components/layout/Navbar";
+import { Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 import Footer from "../components/layout/Footer";
 import axios from "axios";
 import "../styles/cart.css";
@@ -61,9 +62,11 @@ function Cart() {
 
   return (
     <>
-      <Navbar />
 
       <section className="cart-page">
+        <Link to="/menu" className="back-home-btn">
+        <FaArrowLeft /> Back to Menu
+        </Link>
         <h1>Your Cart</h1>
 
         {cart.length === 0 ? (

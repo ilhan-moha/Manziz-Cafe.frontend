@@ -17,7 +17,31 @@
   font-family: "Poppins", sans-serif;
 }
 
+.menu-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
 
+.back-home-btn,
+.cart-top-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  background: #8b5e3c;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.back-home-btn:hover,
+.cart-top-btn:hover {
+  background: #6f472b;
+}
 
 
 .menu-search {
