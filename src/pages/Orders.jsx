@@ -1,4 +1,4 @@
-import { FaPlus, FaEdit, FaTrash } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 import "../styles/orders.css";
 import { useEffect, useState } from "react";
 import {getOrders, deleteOrder} from "../services/ordersService"
