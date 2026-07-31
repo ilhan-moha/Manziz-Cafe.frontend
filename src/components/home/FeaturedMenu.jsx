@@ -20,7 +20,7 @@ function FeaturedMenu() {
             });
         }, []);
     return (
-       <section className="featured-menu">
+       <section id="menu" className="featured-menu">
             <h2>Featured Menu</h2>
             <p>Our customers favorite selection</p> 
 

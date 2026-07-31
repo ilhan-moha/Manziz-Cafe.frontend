@@ -18,8 +18,7 @@ function Navbar() {
 
   return (
 
-    
-    <header className="navbar">
+   <header className="navbar">
       <div className="logo">
         <span className="logo-icon">☕</span>
         <h2>Manziz Cafe</h2>
@@ -36,22 +35,18 @@ function Navbar() {
         <ul className="nav-links">
 
          
-         <li><Link to="/"
-            onClick={() => {
+         <li><Link to="/" onClick={() => {
               setMenuOpen(false);
               window.scrollTo({
                 top: 0,
                 behavior: "smooth",
-              });
-            }} >
-            Home</Link>
+              }); }} >Home</Link>
          </li>
-         <li><button className="nav-button" 
-           onClick={() => {
-            setMenuOpen(false);
-            goToSection("FeaturedMenu");
-           }}>
-           Menu </button> </li>
+        <li>
+          <a href="/#menu" onClick={() => setMenuOpen(false)}>
+            Menu
+          </a>
+        </li>
           <li><button className="nav-button" 
            onClick={() => {
             setMenuOpen(false);
