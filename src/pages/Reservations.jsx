@@ -56,8 +56,10 @@ function Reservations() {
           <input
             type="text"
             onChange={handleChange}
+            value={formData.customer_name}
             placeholder="Enter your name"
             name="customer_name"
+            required
           />
         </div>
 
@@ -67,6 +69,7 @@ function Reservations() {
             type="email"
             placeholder="Enter your email"
             onChange={handleChange}
+            value={formData.email}
             name="email"
           />
         </div>
@@ -76,13 +79,15 @@ function Reservations() {
            
           <input type="date"
           onChange={handleChange}
-          name="reservation_date" />
+          name="reservation_date" 
+           value={formData.email}/>
         </div>
 
         <div className="form-group">
           <label>Time</label>
           <input type="time"
           onChange={handleChange}
+          value={formData.reservation_time}
           name="reservation_time" />
         </div>
 
@@ -92,6 +97,7 @@ function Reservations() {
             type="number"
             min="1"
             placeholder="Number of guests"
+            value={formData.number_of_guests}
             onChange={handleChange}
             name="number_of_guests"
           />
