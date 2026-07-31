@@ -1,59 +1,55 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+import API_URL from "../../services/api";
 import "../../styles/recentOrders.css";
 
 function RecentOrders() {
-  const orders = [
-    {
-      id: "#1001",
-      customer: "John Kamau",
-      item: "Cappuccino",
-      total: "KSh 300",
-      status: "Completed",
-    },
-    {
-      id: "#1002",
-      customer: "Amina Hassan",
-      item: "Chocolate Cake",
-      total: "KSh 600",
-      status: "Preparing",
-    },
-    {
-      id: "#1003",
-      customer: "Brian Otieno",
-      item: "Sandwich",
-      total: "KSh 800",
-      status: "Pending",
-    },
-  ];
+  const [reservations, setReservations] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${API_URL}/reservations`)
+      .then((response) => {
+        setReservations(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching reservations:", error);
+      });
+  }, []);
 
   return (
     <section className="recent-orders">
-      <h2>Recent Orders</h2>
+      <h2>Recent Reservations</h2>
 
       <table>
         <thead>
           <tr>
-            <th>Order ID</th>
+            <th>ID</th>
             <th>Customer</th>
-            <th>Item</th>
-            <th>Total</th>
-            <th>Status</th>
+            <th>Phone</th>
+            <th>Guests</th>
+            <th>Date</th>
+            <th>Time</th>
           </tr>
         </thead>
 
         <tbody>
-          {orders.map((order) => (
-            <tr key={order.id}>
-              <td>{order.id}</td>
-              <td>{order.customer}</td>
-              <td>{order.item}</td>
-              <td>{order.total}</td>
-              <td>
-                <span className={`status ${order.status.toLowerCase()}`}>
-                  {order.status}
-                </span>
-              </td>
+          {reservations.length > 0 ? (
+            reservations.map((reservation) => (
+              <tr key={reservation.id}>
+                <td>#{reservation.id}</td>
+                <td>{reservation.customer_name}</td>
+                <td>{reservation.phone}</td>
+                <td>{reservation.number_of_guests}</td>
+                <td>{reservation.reservation_date}</td>
+                <td>{reservation.reservation_time}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="6">No reservations found.</td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
     </section>
