@@ -1,38 +1,40 @@
 import MenuCard from "../menu/MenuCard";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import API_URL from "../../services/api";
 
-import cappuccino from "../../assets/images/cappuccino.avif";
-import croissant from "../../assets/images/croissant.avif";
-import chocolatecake from "../../assets/images/chocolatecake.avif";
-import sandwich from "../../assets/images/sandwich.avif";
 import { Link } from "react-router-dom";
 
 function FeaturedMenu() {
+
+    const [featuredItems, setFeaturedItems] = useState([]);
+        useEffect(() => {
+        axios
+            .get(`${API_URL}/menu`)
+            .then((response) => {
+            // Show the first 4 items as featured
+            setFeaturedItems(response.data.slice(0, 4));
+            })
+            .catch((error) => {
+            console.error("Error fetching featured menu:", error);
+            });
+        }, []);
     return (
        <section className="featured-menu">
             <h2>Featured Menu</h2>
             <p>Our customers favorite selection</p> 
 
             <div className="menu-grid">
-                <MenuCard 
-                image={cappuccino}
-                 name="Cappuccino" 
-                 description="Rich and creamy coffee with steamed milk" 
-                 price="300" />
-                <MenuCard 
-                image={croissant} 
-                name="Croissant" 
-                description="Buttery and flaky pastry filled with chocolate"
-                 price="400" />
-                <MenuCard 
-                image={chocolatecake} 
-                name="Chocolate Cake" 
-                description="Rich and indulgent chocolate cake" 
-                price="600" />
-                <MenuCard 
-                image={sandwich} 
-                name="Sandwich" 
-                description="Freshly made sandwich with your choice of fillings" 
-                price="800" />
+              {featuredItems.map((item) => (
+                    <MenuCard
+                        key={item.id}
+                        id={item.id}
+                        image={item.image}
+                        name={item.name}
+                        description={item.description}
+                        price={item.price}
+                    />
+                    ))}
             </div>
             <div className="view-menu">
                 <Link to="/menu" className="view-menu-btn">

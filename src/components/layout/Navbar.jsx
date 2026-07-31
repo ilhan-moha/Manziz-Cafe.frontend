@@ -46,7 +46,7 @@ function Navbar() {
             }} >
             Home</Link>
          </li>
-          <li><Link to="/menu" 
+          <li><Link to="/featuredMenu" 
           onClick={() => setMenuOpen(false)}>
           Menu</Link></li>
           <li><button className="nav-button" 
