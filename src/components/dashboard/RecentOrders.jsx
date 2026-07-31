@@ -7,6 +7,10 @@ function RecentOrders() {
   const [reservations, setReservations] = useState([]);
 
   useEffect(() => {
+    fetchReservations();
+  }, []);
+
+  const fetchReservations = () => {
     axios
       .get(`${API_URL}/reservations`)
       .then((response) => {
@@ -15,7 +19,7 @@ function RecentOrders() {
       .catch((error) => {
         console.error("Error fetching reservations:", error);
       });
-  }, []);
+  };
 
   return (
     <section className="recent-orders">
@@ -26,7 +30,7 @@ function RecentOrders() {
           <tr>
             <th>ID</th>
             <th>Customer</th>
-            <th>Phone</th>
+            <th>Email</th>
             <th>Guests</th>
             <th>Date</th>
             <th>Time</th>
@@ -39,7 +43,7 @@ function RecentOrders() {
               <tr key={reservation.id}>
                 <td>#{reservation.id}</td>
                 <td>{reservation.customer_name}</td>
-                <td>{reservation.phone}</td>
+                <td>{reservation.email}</td>
                 <td>{reservation.number_of_guests}</td>
                 <td>{reservation.reservation_date}</td>
                 <td>{reservation.reservation_time}</td>

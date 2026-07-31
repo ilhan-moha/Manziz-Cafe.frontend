@@ -44,7 +44,7 @@ import "../../styles/sidebar.css";
           <FaCalendarAlt /> Reservations
         </Link>
 
-        <Link to="/profile">
+       <Link to="/profile">
           <FaUser /> Profile
         </Link>
 

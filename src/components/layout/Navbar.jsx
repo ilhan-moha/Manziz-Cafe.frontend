@@ -5,6 +5,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const token = localStorage.getItem("token");
 
   const goToSection = (id) => {
     navigate("/");
@@ -59,6 +60,10 @@ function Navbar() {
             goToSection("contact");
           }}>Contact </button> </li>
         </ul>
+
+        {token && (
+          <Link to="/dashboard">Dashboard</Link>
+        )}
         
         <div className="auth-buttons">
           <Link to="/login" className="login-btn" onClick={() => setMenuOpen(false)}>

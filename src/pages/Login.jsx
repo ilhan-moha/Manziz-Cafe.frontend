@@ -29,18 +29,18 @@ function Login() {
         formData
       );
 
-      // Save JWT token
+      
       localStorage.setItem("token", response.data.access_token);
 
-      // Save logged-in user
+    
       localStorage.setItem(
         "user",
         JSON.stringify(response.data.user)
       );
 
       alert("Login successful!");
-
-      navigate("/dashboard");
+      
+      navigate("/");
     } catch (error) {
       alert(error.response?.data?.message || "Invalid email or password.");
     }
