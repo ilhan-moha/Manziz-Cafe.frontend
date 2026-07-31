@@ -76,7 +76,8 @@ return (
           <FaEdit />
         </button>
 
-        <button className="delete-btn">
+        <button className="delete-btn"
+        onClick={() => handleDelete(order.id)}>
           <FaTrash />
                 </button>
               </td>
