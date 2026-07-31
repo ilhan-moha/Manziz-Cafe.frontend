@@ -46,9 +46,12 @@ function Navbar() {
             }} >
             Home</Link>
          </li>
-          <li><Link to="/featuredMenu" 
-          onClick={() => setMenuOpen(false)}>
-          Menu</Link></li>
+         <li><button className="nav-button" 
+           onClick={() => {
+            setMenuOpen(false);
+            goToSection("FeaturedMenu");
+           }}>
+           Menu </button> </li>
           <li><button className="nav-button" 
            onClick={() => {
             setMenuOpen(false);
