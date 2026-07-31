@@ -2,29 +2,32 @@ import { FaBell, FaSearch, FaUserCircle } from "react-icons/fa";
 import "../../styles/topbar.css";
 
 function Topbar() {
+  const user = JSON.parse(localStorage.getItem("user"));
+
   return (
     <header className="topbar">
 
-      <div className="topbar-search">
-        <FaSearch className="search-icon" />
-        <input
-          type="text"
-          placeholder="Search..."
-        />
-      </div>
+     
 
       <div className="topbar-right">
 
-        <button className="notification-btn">
-          <FaBell />
-        </button>
+       
 
         <div className="user-profile">
           <FaUserCircle className="profile-icon" />
+
           <div>
-            <h4>Admin</h4>
-            <p>Manager</p>
+            <h4>
+              {user
+                ? `${user.first_name} ${user.last_name}`
+                : "Guest"}
+            </h4>
+
+            <p>
+              {user ? user.email : "Not logged in"}
+            </p>
           </div>
+
         </div>
 
       </div>

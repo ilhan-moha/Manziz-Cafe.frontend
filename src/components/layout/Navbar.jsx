@@ -66,13 +66,19 @@ function Navbar() {
         )}
         
         <div className="auth-buttons">
-          <Link to="/login" className="login-btn" onClick={() => setMenuOpen(false)}>
-            Login
-          </Link>
-          <Link to="/register" className="register-btn" onClick={() => setMenuOpen(false)}>
-           Register
-          </Link>
-        </div>
+           {!token && (
+           <>
+            <Link to="/login" className="login-btn">
+              Login
+            </Link>
+
+            <Link to="/register" className="register-btn">
+              Register
+            </Link>
+            </>
+            )}
+      </div>
+
       </nav>
     </header>
   );
