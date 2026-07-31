@@ -14,7 +14,8 @@ function Menu() {
   useEffect(() => {
     axios.get(`${API_URL}/menu`)
     .then((Response) => {
-      setmenuItems(Response.data);
+          console.log("Menu from API:", Response.data);
+          setmenuItems(Response.data);
     }).catch((error) => {console.error("Error fetching menu", error);
   });
   }, []);
@@ -62,6 +63,7 @@ const filteredItems =
        {filteredItems.map((item) => (
           <MenuCard
             key={item.id}
+            id = {item.id}
             image={item.image}
             name={item.name}
             description={item.description}

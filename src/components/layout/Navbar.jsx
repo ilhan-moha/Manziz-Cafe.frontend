@@ -34,6 +34,8 @@ function Navbar() {
 
     <nav className={menuOpen ? "nav-menu active" : "nav-menu"}>
         <ul className="nav-links">
+
+          <Link to="/cart">Cart</Link>
          <li><Link to="/"
             onClick={() => {
               setMenuOpen(false);

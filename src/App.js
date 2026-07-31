@@ -10,6 +10,7 @@ import Reservations from "./pages/Reservations";
 import Profile from "./pages/Profile";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
+import Cart from "./pages/Cart";
 import "./styles/global.css";
 import "./styles/navbar.css";
 import "./styles/hero.css";
@@ -27,6 +28,7 @@ function App() {
         <Route path="/dashboard" element={<ProtectedRoute> <Dashboard /></ProtectedRoute>}/>
         <Route path="/orders" element={<ProtectedRoute><Orders /></ProtectedRoute>}/>
         <Route path="/menu" element={<Menu />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/reservations" element={ <ProtectedRoute> <Reservations /></ProtectedRoute>}/>
         <Route path="/profile" element={<ProtectedRoute> <Profile /> </ProtectedRoute>}/>
         <Route path="/forgot-password" element={<ForgotPassword />} />
