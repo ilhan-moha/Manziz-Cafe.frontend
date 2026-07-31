@@ -1,5 +1,6 @@
 import "../../styles/MenuCard.css";
 import { useCart } from "../../context/CartContext";
+import API_URL from "../../services/api";
 
 function MenuCard({ id, image, name, description, price }) {
 
@@ -21,7 +22,11 @@ function MenuCard({ id, image, name, description, price }) {
 
     return (
         <div className="menu-card">
-            <img src={image} alt={name} className="menu-image" />
+           <img
+            src={image.startsWith("http") ? image : `${API_URL}${image}`}
+            alt={name}
+            className="menu-image"
+            />
 
             <div className="menu-content">
                 <h3>{name}</h3>
