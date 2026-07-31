@@ -45,9 +45,7 @@ function Profile() {
 
         </div>
 
-        <button className="profile-btn">
-          Edit Profile
-        </button>
+       
 
       </div>
     </section>

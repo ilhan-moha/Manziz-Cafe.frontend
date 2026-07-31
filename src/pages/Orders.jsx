@@ -29,9 +29,6 @@ return (
     <div className="orders-header">
       <h1>Orders</h1>
 
-      <button className="add-order-btn">
-        <FaPlus /> Add Order
-      </button>
     </div>
 
     <table className="orders-table">
@@ -72,9 +69,6 @@ return (
         </td>
 
         <td className="actions">
-        <button className="edit-btn">
-          <FaEdit />
-        </button>
 
         <button className="delete-btn"
         onClick={() => handleDelete(order.id)}>

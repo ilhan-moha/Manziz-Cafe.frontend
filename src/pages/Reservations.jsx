@@ -2,9 +2,13 @@ import "../styles/reservations.css";
 import { useState } from "react";
 import axios from "axios";
 import API_URL from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 
 function Reservations() {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     customer_name: "",
     email: "",
@@ -27,6 +31,7 @@ function Reservations() {
       await axios.post(`${API_URL}/reservations`, formData);
 
       alert("Reservation successful!");
+      navigate("/dashboard");
 
       setFormData({
         customer_name: "",
